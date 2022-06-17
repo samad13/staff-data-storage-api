@@ -112,8 +112,9 @@ router.put(
 
 // find staff individually by staff id or name
 router.post('/staff', async (req, res) => {
-    const staff = await Profile.findOne({staffNumber: req.body.staffNumber})
-    
+   // const staff = await Profile.findOne({staffNumber: req.body.staffNumber})
+   const staff = await Profile.findOne()
+   .or([{staffNumber: req.body.staffNumber}, {name: req.body.name}])
     if(!staff) {
         return res.status(400).send('The user not found');
     }

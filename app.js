@@ -11,10 +11,7 @@ const errorHandler = require('./helpers/error-handlers')
 
 
 
-//login
-// search by name or id
-//then it will bring th information needed from the database individually
-//use the token for now
+
 const api = process.env.API_URL
 
 
